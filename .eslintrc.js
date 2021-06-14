@@ -1,9 +1,9 @@
 module.exports = {
-    settings: {
-        "import/resolver": {
-            node: {
-                paths: ['src']
-            }
-        }
-    }
-}
+  settings: {
+    "import/resolver": {
+      node: {
+        paths: ["src"],
+      },
+    },
+  },
+};
