@@ -10,13 +10,13 @@ export default function Hero() {
       <div className="hero-inner section-inner">
         <div className="hero-content">
           <Fade bottom delay={200}>
-            <h1 className="mt-0 mb-16">Landing template for startups</h1>
+            <h1 className="mt-0 mb-16">Cube VPS</h1>
           </Fade>
           <div className="container-xs">
             <Fade bottom delay={400}>
               <p className="mt-0 mb-32">
-                Our landing page template works on all devices, so you only have
-                to set it up once, and get beautiful results forever.
+                Kami menyediakan Virtual Private Server yang cepat dan
+                berkualitas tinggi. Pilih fitur dan harga sesuai keinginan anda
               </p>
             </Fade>
           </div>
