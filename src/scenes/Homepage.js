@@ -1,7 +1,11 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import Header from "parts/Header";
+
 import Section from "elements/Section";
+import Card from "elements/Card";
+import CardList from "elements/CardList";
+
+import Header from "parts/Header";
 import Hero from "parts/Hero";
 import Client from "parts/Client";
 import Feature from "parts/Feature";
@@ -37,6 +41,46 @@ export default function Homepage() {
     },
   ];
 
+  // List Price Array
+  const listPricing = [
+    {
+      price: 27,
+      currencySymbol: "$",
+      description: "Cocok untuk kamu yang mau mencoba",
+      featureList: [
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: false, content: "Gratis penyimpanan 50GB" },
+        { isChecked: false, content: "Gratis penyimpanan 50GB" },
+      ],
+    },
+    {
+      price: 28,
+      currencySymbol: "$",
+      description: "Cocok untuk kamu yang mau mencoba",
+      featureList: [
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: false, content: "Gratis penyimpanan 50GB" },
+      ],
+    },
+    {
+      price: 29,
+      currencySymbol: "$",
+      description: "Cocok untuk kamu yang mau mencoba",
+      featureList: [
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+        { isChecked: true, content: "Gratis penyimpanan 50GB" },
+      ],
+    },
+  ];
+
   return (
     <div className="body-wrap">
       <Header></Header>
@@ -60,6 +104,56 @@ export default function Homepage() {
                     data={feature}
                   ></Feature>
                 ))}
+              </div>
+            </div>
+          </div>
+        </Section>
+        <Section className="pricing">
+          <div className="container">
+            <div className="pricing-inner section-inner has-top-divider">
+              <div className="section-header center-content">
+                <div className="container-xs">
+                  <h2 className="mt-0 mb-16">Pilih Paket Berlangganan</h2>
+                  <p className="m-0">
+                    Sesuaikan dengan kebutuhan kamu, setiap paket memiliki
+                    kelebihan masing-masing. Jadi, tunggu apa lagi?
+                  </p>
+                </div>
+              </div>
+              <div className="tiles-wrap">
+                <Fade bottom delay={200}>
+                  {listPricing.map((list, index) => (
+                    <Card key={index}>
+                      <div className="tiles-item-inner has-shadow">
+                        <div className="pricing-item-content">
+                          <div className="pricing-item-header pb-24 mb-24">
+                            <div className="pricing-item-price mb-4">
+                              <span className="pricing-item-price currency h2">
+                                {list.currencySymbol}
+                              </span>
+                              <span className="pricing-item-price-amount h1 pricing-switchable">
+                                {list.price}
+                              </span>
+                            </div>
+                            <div className="text-xs text-color-low">
+                              {list.description}
+                            </div>
+                          </div>
+                          <div className="pricing-item-features mb-40">
+                            <div className="pricing-item-features-title h6 text-xs text-color-high mb-24">
+                              Apa Saja didalamnya?
+                            </div>
+                            <CardList
+                              isSmall
+                              className="pricing-item-features-list"
+                              data={list.featureList}
+                            ></CardList>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </Fade>
               </div>
             </div>
           </div>
