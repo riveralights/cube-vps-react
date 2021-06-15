@@ -9,6 +9,7 @@ import Header from "parts/Header";
 import Hero from "parts/Hero";
 import Client from "parts/Client";
 import Feature from "parts/Feature";
+import Footer from "parts/Footer";
 
 // Image Feature
 import Tile01 from "assets/images/feature-tile-icon-01.svg";
@@ -121,8 +122,8 @@ export default function Homepage() {
                 </div>
               </div>
               <div className="tiles-wrap">
-                <Fade bottom delay={200}>
-                  {listPricing.map((list, index) => (
+                {listPricing.map((list, index) => (
+                  <Fade bottom delay={200 * index}>
                     <Card key={index}>
                       <div className="tiles-item-inner has-shadow">
                         <div className="pricing-item-content">
@@ -152,13 +153,14 @@ export default function Homepage() {
                         </div>
                       </div>
                     </Card>
-                  ))}
-                </Fade>
+                  </Fade>
+                ))}
               </div>
             </div>
           </div>
         </Section>
       </main>
+      <Footer></Footer>
     </div>
   );
 }
